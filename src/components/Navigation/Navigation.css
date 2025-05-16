@@ -1,0 +1,65 @@
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: background .35s ease-in;
+    z-index: 2;
+    background: var(--bg-dark);
+    padding: 1rem;
+    width: 100vw;
+    height: 100px;
+    font-family: 'Montserrat', sans-serif;
+
+    @media screen and (max-width: 768px) {
+        height: 75px;
+    }
+}
+
+.logo-bar {
+    fill: var(--primary);
+}
+
+.logo-bar svg {
+    overflow: visible;
+}
+
+#d-1,
+#r-1,
+#d-2,
+#r-2 {
+    opacity: 0;
+}
+
+#d-1,
+#r-1 {
+    animation: move-up 1s forwards 0.5s;
+}
+
+#d-2,
+#r-2 {
+    animation: move-down 1s forwards 0.5s;
+}
+
+@keyframes move-down {
+    0% {
+        transform: translate(5%, -50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+@keyframes move-up {
+    0% {
+        transform: translate(-5%, 50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}

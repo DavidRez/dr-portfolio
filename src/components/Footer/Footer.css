@@ -1,0 +1,12 @@
+.footer {
+    position: relative;
+    border-top: 1px solid rgb(66, 71, 80);
+    padding: 1rem;
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: 1rem;
+
+    @media screen and (max-width: 320px) {
+        padding: 1rem;
+    }
+}

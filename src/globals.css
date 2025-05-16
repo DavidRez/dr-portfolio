@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'tailwindcss';
+
+/* @theme {
+  --primary-font: 'Montserrat', sans-serif;
+  --secondary-font: 'Karla', sans-serif;
+  --primary: #ea5311;
+  --secondary: #ef2551;
+  --text-light: #e2cfb5;
+  --text-dark: #444444;
+  --bg-light: #f4e7d5;
+  --bg1-light: #e5d6c1;
+  --bg2-light: #ddceb9;
+  --bg3-light: #ddc9ac;
+  --bg-dark: #27353d;
+  --bg1-dark: #3b4c54;
+  --bg2-dark: #242c3e;
+  --bg3-dark: #16223d;
+  --font-header: 'Montserrat', sans-serif;
+  --font-body: 'Karla', sans-serif;
+} */
+
+:root {
+  font-family: var(--font-body);
+  color-scheme: light dark;
+  /* font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: 100vw;
+  height: fit-content;
+  min-height: 100vh;
+
+  @media screen and (max-width: 320px) {
+    align-items: flex-start;
+    padding: 100px 1rem 2rem;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+  }
+  a {
+    color:  var(--text-dark);
+  }
+  a:hover {
+    color:  var(--primary);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: var(--text-light);
+    background-color: var(--bg-dark);
+  }
+  a {
+    color:  var(--text-light);
+  }
+  a:hover {
+    color:  var(--primary);
+  }
+}
