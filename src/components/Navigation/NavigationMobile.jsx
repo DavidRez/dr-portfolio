@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import React from 'react';
 import { NavLink } from 'react-router';
-import logo from '@/assets/logo.svg';
 import './NavigationMobile.css';
+import ThemeToggle from '../ui/ThemeToggle/ThemeToggle';
 import { useGlobal } from '@/context/GlobalContext';
 
 const NavigationMobile = ({ className }) => {
@@ -31,13 +31,6 @@ const NavigationMobile = ({ className }) => {
         }
     }
 
-    const logoStyle = {
-        height: '100%'
-    }
-    const imageStyle = {
-        width: 'auto',
-        height: '100%'
-    }
     if (!loading) {
         let { primary, secondary } = []
         data.navigation.forEach(link => {
@@ -49,9 +42,6 @@ const NavigationMobile = ({ className }) => {
         })
         return (
             <div className={`navigation-mobile ${className}`}>
-                <NavLink to='/' style={logoStyle} aria-label='link to homepage'>
-                    <img src={logo} style={imageStyle} alt='logo'/>
-                </NavLink>
                 <div className={`navigation-mobile__hamburger ${isOpen ? 'navigation-mobile__hamburger--open' : ''}`}
                     onClick={toggleMenu}
                     onKeyDown={(e) => handleKeyDown(e)}
@@ -100,6 +90,8 @@ const NavigationMobile = ({ className }) => {
                                     role='menuitem'>{link.label}</NavLink>)
                             }
                         })}
+
+                        <ThemeToggle />
                     </div>
                 </div>
             </div>

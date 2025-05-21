@@ -1,37 +1,25 @@
 .navigation-desktop {
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    height: 100%;
-}
-
-.navigation-desktop__logo {
-    height: 100%;
-}
-
-.navigation-desktop__logo svg {
-    width: auto;
-    height: 100%;
-}
-
-.navigation-desktop__navlinks {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     gap: 1rem;
     height: fit-content;
     font-size: 1.25rem;
     font-weight: 500;
 }
 
-.navigation-desktop__navlinks a {
+.navigation-desktop > * {
+    z-index: 1;
+}
+
+.navigation-desktop a {
     position: relative;
     transition: 0.2s all ease-in 0.3s;
     width: fit-content;
     letter-spacing: 1px;
+    color: var(--text);
 }
 
-.navigation-desktop__navlinks a::after {
+.navigation-desktop a::after {
     position: absolute;
     bottom: -5px;
     left: 0;
@@ -48,11 +36,14 @@
 a.active::after {
     width: 100%;
 }
-
-.navigation-desktop__navlinks a:hover::after {
+.navigation-desktop a:hover {
+    color: var(--primary);
+}
+.navigation-desktop a:hover::after {
     width: 100%;
 }
 
 .primary {
     color: var(--primary);
+    font-weight: 700;
 }
