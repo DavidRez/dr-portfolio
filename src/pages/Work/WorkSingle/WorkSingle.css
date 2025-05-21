@@ -1,7 +1,13 @@
 .work-single {
+    position: relative;
+}
+
+.work-single__container {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     gap: 3rem;
     width: 100%;
 
@@ -12,7 +18,7 @@
     }
 }
 
-.work-single--reverse {
+.work-single__container--reverse {
     flex-direction: row-reverse;
 
     @media screen and (max-width: 768px) {
@@ -23,18 +29,24 @@
 
 .work-single__media {
     display: flex;
-    flex: 1 0 0;
+    position: relative;
+    flex: 45% 0 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
 
     video,
     img {
         width: 100%;
+    }
+
+    @media screen and (max-width: 768px) {
+        flex: 1 0 0;
     }
 }
 
 .work-single__info {
     display: flex;
     position: relative;
-    flex: 1 0 0;
+    flex: 45% 0 0;
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
@@ -46,20 +58,26 @@
         left: -1.5rem;
         transform: skew(-2.5deg);
         margin: auto;
-        background: var(--text-light);
+        background: var(--text);
         width: 1px;
         height: 110%;
         content: '';
     } */
+
+    @media screen and (max-width: 768px) {
+        flex: 1 0 0;
+    }
 }
 
 .work-single h1 {
     margin-bottom: 0.5rem;
+    color: var(--text);
     text-align: left;
     font-weight: 500;
 }
 
 .work-single p {
+    color: var(--text);
     text-align: left;
     letter-spacing: 1px;
     line-height: 2rem;
@@ -69,6 +87,7 @@
 .work-single__frameworks li {
     display: inline;
     position: relative;
+    color: var(--text);
 
     &:not(:last-of-type) {
         margin-right: 1.5rem;
@@ -81,4 +100,25 @@
         content: '/';
         line-height: 1;
     }
+}
+.work-single__examples {
+    display: flex;
+    gap: 1rem;
+}
+.work-single__example {
+    display: inline-block;
+    padding: 0.25rem;
+    width: 42px;
+    height: 42px;
+}
+.work-single__example svg,
+.work-single__example path {
+    transition: all .3s ease;
+    width: auto;
+    height: 100%;
+    fill: var(--secondary) !important;
+}
+.work-single__example:hover svg,
+.work-single__example:hover path {
+    fill: var(--primary) !important;
 }
