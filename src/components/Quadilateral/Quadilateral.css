@@ -1,0 +1,21 @@
+.quadilateral {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.quadilateral__graphic{
+    display: block;
+    position: absolute;
+    transition: all .2s ease;
+    transform: skewY(-25deg) rotate(15deg);
+    opacity: 0.2;
+    z-index: 1;
+    background: var(--border);
+    background: linear-gradient(176deg, var(--secondary) 15%, var(--bg) 80%);
+    width: 0.25rem;
+    height: 12rem;
+}
