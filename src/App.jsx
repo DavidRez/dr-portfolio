@@ -1,19 +1,20 @@
-import { Routes, Route } from 'react-router';
+import { Routes, Route, useLocation } from 'react-router';
 import { Home } from './pages';
 import Work from './pages/Work/Work';
 import Navigation from './components/Navigation/Navigation';
 import Footer from './components/Footer/Footer';
-// import GlobalProvider from './context/GlobalProvider';
 import { useGlobal } from '@/context/GlobalContext';
 import './App.css';
 import Spinner from './components/ui/Spinner/Spinner';
 
 function App() {
   const { loading } = useGlobal();
-  
+  const location = useLocation();
+  const currentRoute = location.pathname;
+
   if (!loading) {
     return (
-      <main>
+      <main className={currentRoute.includes('work') ? 'pages-work' : null}>
         <Navigation />
         <Routes>
           <Route index element={<Home />} />
@@ -22,7 +23,6 @@ function App() {
         <Footer />
       </main>
     )
-      {/* <h1 className="text-3xl font-bold underline">App</h1> */} 
   } else {
     return (
       <main>
