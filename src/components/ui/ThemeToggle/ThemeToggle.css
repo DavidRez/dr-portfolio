@@ -1,0 +1,17 @@
+.theme-toggle-button {
+    padding: 0.5rem;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+}
+
+.theme-toggle-button svg {
+    transition: all .3s ease;
+    width: auto;
+    height: 100%;
+    fill: var(--text);
+}
+
+.theme-toggle-button:hover svg {
+    fill: var(--primary);
+}
