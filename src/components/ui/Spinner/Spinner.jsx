@@ -1,4 +1,5 @@
 import { motion } from 'motion/react'
+import './Spinner.css'
 
 function Spinner() {
     return (
