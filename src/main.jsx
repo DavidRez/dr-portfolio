@@ -12,7 +12,6 @@ const Wrapper = ({ children }) => {
   useLayoutEffect(() => {
     // Scroll to the top of the page when the route changes
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    console.log(location.pathname)
   }, [location.pathname]);
 
   return children;
@@ -27,5 +26,5 @@ createRoot(document.getElementById('root')).render(
         </Wrapper>
       </GlobalProvider>
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 )
