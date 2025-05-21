@@ -6,8 +6,7 @@ const Footer = () => {
 
   return (
       <footer className='footer'>
-        <p>Designed and built by David Ramirez</p>
-        <p>{`© ${new Date().getFullYear()}`}</p>
+        <p>{`David Ramirez © ${new Date().getFullYear()}`}</p>
       </footer>
   );
 };
