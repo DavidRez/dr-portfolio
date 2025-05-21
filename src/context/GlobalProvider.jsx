@@ -10,7 +10,6 @@ const GlobalProvider = ({ children }) => {
   const changeColor = (clr = 'var(--bg)') => setColor(clr);
 
   useEffect(() => {
-    console.log("******call******");
     const fetchData = async () => {
       try {
         const response = await fetch(
