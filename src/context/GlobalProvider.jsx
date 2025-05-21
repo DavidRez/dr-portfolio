@@ -5,8 +5,9 @@ const GlobalProvider = ({ children }) => {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
-  const [color, setColor] = useState('#27353d');
-  const changeColor = (clr = '#27353d') => setColor(clr);
+
+  const [color, setColor] = useState('var(--bg)'); // current bg color
+  const changeColor = (clr = 'var(--bg)') => setColor(clr);
 
   useEffect(() => {
     console.log("******call******");
@@ -41,10 +42,20 @@ const GlobalProvider = ({ children }) => {
                           title,
                           header,
                           content {
-                              text
+                              html
+                          },
+                          seoOverride {
+                            title,
+                            description,
+                            keywords
                           }
                         },
                         work (where: {slug: "work"}) {
+                          seoOverride {
+                            title,
+                            description,
+                            keywords
+                          },
                           singleWork {
                             title,
                             description,
@@ -57,13 +68,10 @@ const GlobalProvider = ({ children }) => {
                               url,
                               mimeType
                             },
-                            lightBg {
-                              hex
-                            },
-                            darkBg {
-                              hex
-                            },
-                            frameworks
+                            bg,
+                            frameworks,
+                            github,
+                            live
                         }
                     }
                 }
