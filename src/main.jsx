@@ -1,8 +1,8 @@
 import { StrictMode, useLayoutEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, useLocation } from 'react-router';
-import '@/globals.css';
-import '@/styles/typography.css';
+import './globals.css';
+import './styles/typography.css';
 import App from './App.jsx';
 import GlobalProvider from './context/GlobalProvider';
 

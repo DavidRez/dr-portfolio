@@ -3,7 +3,7 @@ import { Home } from './pages';
 import Work from './pages/Work/Work';
 import Navigation from './components/Navigation/Navigation';
 import Footer from './components/Footer/Footer';
-import { useGlobal } from '@/context/GlobalContext';
+import { useGlobal } from './context/GlobalContext';
 import './App.css';
 import Spinner from './components/ui/Spinner/Spinner';
 

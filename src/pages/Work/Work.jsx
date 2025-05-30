@@ -1,10 +1,9 @@
 import { useEffect, useState, useRef } from 'react';
-import { useGlobal } from '@/context/GlobalContext';
-import Spinner from '@/components/ui/Spinner/Spinner'
-import WorkSingle from '@/pages/Work/WorkSingle/WorkSingle';
+import { useGlobal } from '../../context/GlobalContext';
+import Spinner from '../../components/ui/Spinner/Spinner'
+import WorkSingle from '../../pages/Work/WorkSingle/WorkSingle';
 import * as motion from "motion/react-client";
 import { useInView } from "motion/react";
-import "./Work.css";
 
 const Work = () => {
   const [navHeight, setNavHeight] = useState(0);
@@ -33,7 +32,7 @@ const Work = () => {
         {data.work.singleWork.map((work, i) => {
           return <WorkSingle 
             key={`work-${i}`}
-            className='work'
+            className='work z-1'
             reverse={ i % 2 !== 0 } 
             props={work} 
             navHeight={navHeight} />
