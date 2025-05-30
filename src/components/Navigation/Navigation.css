@@ -1,16 +1,12 @@
 .navigation {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     position: fixed;
     top: 0;
     left: 0;
     transition: background .35s ease-in;
     z-index: 2;
-    padding: 1rem;
     width: 100vw;
     height: 100px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-header);
 
     .pages-work & {
         background: var(--bg);

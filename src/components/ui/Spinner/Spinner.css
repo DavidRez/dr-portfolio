@@ -1,9 +1,6 @@
 .spinner__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 8px;
-    background: #222;
+    background: var(--bg);
     padding: 40px;
     width: 100vw;
     height: 100vh;

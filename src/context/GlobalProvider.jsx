@@ -62,7 +62,10 @@ const GlobalProvider = ({ children }) => {
                             video {
                               url,
                               mimeType
-                            }
+                            },
+                            poster {
+                                url
+                            },
                             image {
                               url,
                               mimeType

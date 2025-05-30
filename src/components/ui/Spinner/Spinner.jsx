@@ -3,7 +3,7 @@ import './Spinner.css'
 
 function Spinner() {
     return (
-        <div className='spinner__container'>
+        <div className='spinner__container flex justify-center items-center'>
             <motion.div
                 className='spinner__spinner'
                 animate={{ rotate: 360 }}

@@ -3,7 +3,7 @@ import React from 'react';
 import { NavLink } from 'react-router';
 import './NavigationMobile.css';
 import ThemeToggle from '../ui/ThemeToggle/ThemeToggle';
-import { useGlobal } from '@/context/GlobalContext';
+import { useGlobal } from '../../context/GlobalContext';
 
 const NavigationMobile = ({ className }) => {
     const [isOpen, toggleOpen] = useState(false);
@@ -41,7 +41,7 @@ const NavigationMobile = ({ className }) => {
             }
         })
         return (
-            <div className={`navigation-mobile ${className}`}>
+            <div className={`navigation-mobile ${className} flex justify-center items-center gap-4`}>
                 <div className={`navigation-mobile__hamburger ${isOpen ? 'navigation-mobile__hamburger--open' : ''}`}
                     onClick={toggleMenu}
                     onKeyDown={(e) => handleKeyDown(e)}
@@ -50,9 +50,9 @@ const NavigationMobile = ({ className }) => {
                     <span></span>
                     <span></span>
                 </div>
-                <div className={`navigation-mobile__menu ${isOpen ? 'navigation-mobile__menu--active' : ''}`}>
+                <div className={`navigation-mobile__menu flex justify-end ${isOpen ? 'navigation-mobile__menu--active' : ''}`}>
                     <div className='navigation-mobile__overlay' onClick={toggleMenu}></div>
-                    <div className='navigation-mobile__navlinks' role='menu'>
+                    <div className='navigation-mobile__navlinks flex flex-col items-end justify-end gap-8' role='menu'>
                         {primary.map((link, i) => {
                             if (link.external) {
                                 return (<a key={`primary-${i}`}

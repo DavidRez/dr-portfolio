@@ -1,18 +1,12 @@
 .footer {
     position: relative;
     transition: background .35s ease-in;
-    /* background: var(--bg); */
-    padding: 1rem;
     width: 100%;
     color: var(--text);
     font-size: 14px;
 
     .pages-work & {
         background: var(--bg);
-    }
-
-    @media screen and (max-width: 320px) {
-        padding: 1rem;
     }
 }
 

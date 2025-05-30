@@ -4,10 +4,10 @@ import * as motion from "motion/react-client";
 import { splitText } from "motion-plus";
 import { useInView } from "motion/react";
 import { stagger } from "motion";
-import { useGlobal } from '@/context/GlobalContext';
-import animateLines from "@/utils/animateLines";
-import Github from "@/assets/github.svg?react";
-import Live from "@/assets/live.svg?react";
+import { useGlobal } from '../../../context/GlobalContext';
+import animateLines from "../../../utils/animateLines";
+import Github from "../../../assets/github.svg?react";
+import Live from "../../../assets/live.svg?react";
 // import Quadilateral from "../../../components/ui/Quadilateral/Quadilateral";
 
 const WorkSingle = ({ className, reverse, navHeight, props }) => {
@@ -86,12 +86,11 @@ const WorkSingle = ({ className, reverse, navHeight, props }) => {
       {/* <Quadilateral /> */}
       <div
         ref={container}
-        className={`${
-          reverse ? "work-single__container work-single__container--reverse" : "work-single__container"
-        } ${className} `}
+        className={`w-4/5 flex flex-row justify-center items-center gap-8 max-md:w-1/1 max-lg:flex-col max-lg:gap-12 max-lg:items-start 
+          ${reverse ? "flex-row-reverse max-lg:flex-col" : null} ${className}`}
       >
         <motion.div
-          className="work-single__media"
+          className="work-single__media flex flex-[45_0_0] max-lg:flex-[1_0_0]"
           initial={{ opacity: 0, y: 45 }}
           animate={isContentInView ? { opacity: 1, y: 0 } : null}
           transition={{
@@ -100,9 +99,9 @@ const WorkSingle = ({ className, reverse, navHeight, props }) => {
             duration: 2,
           }}
         >
-          {props.hasVideo ? (
+          {props.hasVideo && props.video.url ? (
             isContentInView ? (
-              <video controls>
+              <video controls poster={props.poster.url}>
                 <source src={props.video.url} type={props.video.mimeType} />
               </video>
             ) : (
@@ -114,8 +113,8 @@ const WorkSingle = ({ className, reverse, navHeight, props }) => {
             <div></div>
           )}
         </motion.div>
-        <div className="work-single__info">
-          <h1 className="h3">{props.title}</h1>
+        <div className="work-single__info flex flex-[45_0_0] max-lg:flex-[1_0_0] flex-col items-start gap-4">
+          <h1 className="h3 md:h2">{props.title}</h1>
           <p className="work-single__description">{props.description}</p>
           <ul className="work-single__frameworks text-md">
             {props.frameworks.map((str, j) => {

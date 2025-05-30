@@ -1,8 +1,0 @@
-.work {
-    z-index: 1;
-    width: 80%;
-
-    @media screen and (max-width: 600px) {
-        width: 100%;
-    }
-}

@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router';
 import React from 'react';
 import './NavigationDesktop.css';
-import { useGlobal } from '@/context/GlobalContext';
+import { useGlobal } from '../../context/GlobalContext';
 import ThemeToggle from '../ui/ThemeToggle/ThemeToggle';
 
 const NavigationDesktop = ({ className }) => {
@@ -18,7 +18,7 @@ const NavigationDesktop = ({ className }) => {
         })
 
         return (
-            <div className={`navigation-desktop ${className}`} role='menu'>
+            <div className={`navigation-desktop ${className} flex flex-row items-center justify-center gap-4`} role='menu'>
                 {primary.map((link, i) => {
                     if (link.external) {
                         return (<a key={`primary-${i}`} href={link.path} target='_blank' role='menuitem'>{link.label}</a>)
