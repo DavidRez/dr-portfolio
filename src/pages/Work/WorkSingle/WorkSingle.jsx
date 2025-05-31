@@ -90,30 +90,32 @@ const WorkSingle = ({ className, reverse, navHeight, props }) => {
           ${reverse ? "flex-row-reverse max-lg:flex-col" : null} ${className}`}
       >
         <motion.div
-          className="work-single__media flex flex-[45_0_0] max-lg:flex-[1_0_0]"
+          className="work-single__media relative overflow-hidden flex w-9/20 pt-[25%] max-lg:w-1/1 max-lg:pt-[55%]"
           initial={{ opacity: 0, y: 45 }}
+          viewport={{ once: true }}
           animate={isContentInView ? { opacity: 1, y: 0 } : null}
           transition={{
             type: "spring",
-            bounce: 0.5,
+            bounce: 0,
             duration: 2,
           }}
         >
           {props.hasVideo && props.video.url ? (
             isContentInView ? (
-              <video controls poster={props.poster.url}>
+              <video className='absolute top-0 left-0 w-1/1 h-1/1'
+                controls poster={props.poster.url}>
                 <source src={props.video.url} type={props.video.mimeType} />
               </video>
             ) : (
               <div></div>
             )
           ) : isContentInView ? (
-            <img src={props.image.url} />
+            <img className='absolute top-0 left-0 w-1/1 h-1/1' src={props.image.url} />
           ) : (
             <div></div>
           )}
         </motion.div>
-        <div className="work-single__info flex flex-[45_0_0] max-lg:flex-[1_0_0] flex-col items-start gap-4">
+        <div className="work-single__info flex w-9/20 max-lg:w-1/1 flex-col items-start gap-4">
           <h1 className="h3 md:h2">{props.title}</h1>
           <p className="work-single__description">{props.description}</p>
           <ul className="work-single__frameworks text-md">
@@ -122,6 +124,7 @@ const WorkSingle = ({ className, reverse, navHeight, props }) => {
                 <motion.li
                   key={`framework-${j}`}
                   initial={{ opacity: 0, y: 135 }}
+                  viewport={{ once: true }}
                   animate={isContentInView ? { opacity: 1, y: 0 } : null}
                   transition={{
                     duration: 0.5,
@@ -133,7 +136,7 @@ const WorkSingle = ({ className, reverse, navHeight, props }) => {
               );
             })}
           </ul>
-          <div className='work-single__examples'>
+          <div className='work-single__examples flex gap-4'>
             {props.github ? (
               <a
                 className="work-single__example"
