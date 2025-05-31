@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router';
+import { Analytics } from "@vercel/analytics/next"
 import { Home } from './pages';
 import Work from './pages/Work/Work';
 import Navigation from './components/Navigation/Navigation';
@@ -21,6 +22,7 @@ function App() {
           <Route path='/work' element={<Work />} />
         </Routes>
         <Footer />
+        <Analytics />
       </main>
     )
   } else {
